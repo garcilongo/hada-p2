@@ -13,7 +13,7 @@ namespace Hada
         public Game() {
             // Inicializar propiedad de control
             this.finPartida = false;
-            
+
             // Inicializar bucle del juego
             GameLoop();
         }
@@ -46,9 +46,27 @@ namespace Hada
                 if (entrada != null && entrada.ToUpper() == "S") {
                     finPartida = true;
                 } else {
+                    // Separar la cadena con ,
+                    string[] partes = entrada.Split(',');
 
+                    // Validar que hayan 2 partes y que sean números
+                    if (partes.Length == 2 &&
+                        int.TryParse(partes[0], out int f) &&
+                        int.TryParse(partes[1], out int c)) {
+
+                        Coordenada cordDisparo = new Coordenada(f, c);
+                        tablero.Dispara(cordDisparo);
+                    } else {
+                        // Formato incorrecto -> Informar al usuario
+                        Console.WriteLine("Formato incorrecto. Debe ser FILA,COLUMNA (ej: 1,2)");
+                    }
                 }
             }
+        }
+
+        private void CuandoEventoFinPartida(object sender, EventArgs e) {
+            Console.WriteLine("PARTIDA FINALIZADA");
+            this.finPartida = true;
         }
     }
 }
