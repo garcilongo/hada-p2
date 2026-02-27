@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A3249BD5-93F6-46FA-9EDC-5C2502FB0415}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>HADA</RootNamespace>
+    <RootNamespace>Hada</RootNamespace>
     <AssemblyName>hada-p2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Barco.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="Coordenada.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
