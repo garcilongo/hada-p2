@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HADA {
+namespace Hada {
     public class Coordenada {
         // Campos de respaldo (backing fields) [cite: 141]
         private int _fila;

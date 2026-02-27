@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HADA {
+namespace Hada {
     internal class Program {
         static void Main(string[] args) {
         }
