@@ -9,6 +9,7 @@ namespace Hada
     public class Eventos
     {
 
+        //Eventos de la practica
         public class TocadoArgs
         {
             private string nombre;
