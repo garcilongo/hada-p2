@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hada
 {
-    internal class Tablero
+    public class Tablero
     {
         private int _tamTablero;
         private List<Coordenada> coordenadasDisparadas;
