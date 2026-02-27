@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A3249BD5-93F6-46FA-9EDC-5C2502FB0415}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>hada_p2</RootNamespace>
+    <RootNamespace>HADA</RootNamespace>
     <AssemblyName>hada-p2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Barco.cs" />
+    <Compile Include="Coordenada.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tablero.cs" />
