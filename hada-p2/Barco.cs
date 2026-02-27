@@ -11,8 +11,8 @@ namespace Hada {
         public int NumDanyos { get; private set; }
 
         // Definición de los eventos
-         public event EventHandler<TocadoArgs> eventoTocado;
-         public event EventHandler<HundidoArgs> eventoHundido;
+         public event EventHandler<Eventos.TocadoArgs> eventoTocado;
+         public event EventHandler<Eventos.HundidoArgs> eventoHundido;
 
         // Constructor
         public Barco(string nombre, int longitud, char orientacion, Coordenada coordenadaInicio) {
@@ -51,14 +51,14 @@ namespace Hada {
 
                     // Lanzamos el evento de TOCADO 
                     if (eventoTocado != null) {
-                        eventoTocado(this, new TocadoArgs(this.Nombre, c));
+                        eventoTocado(this, new Eventos.TocadoArgs(this.Nombre, c));
                     }
 
                     // Comprobamos si tras el impacto se ha hundido
                     if (this.hundido()) {
                         // Lanzamos el evento de HUNDIDO 
                         if (eventoHundido != null) {
-                             eventoHundido(this, new HundidoArgs(this.Nombre));
+                             eventoHundido(this, new Eventos.HundidoArgs(this.Nombre));
                         }
                     }
                 }

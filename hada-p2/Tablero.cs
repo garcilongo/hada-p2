@@ -61,7 +61,7 @@ namespace Hada
             }
         }
 
-        private void CuandoEventoTocado()
+        private void CuandoEventoTocado(Barco b, Coordenada c, Eventos.TocadoArgs t)
         {
 
         }
