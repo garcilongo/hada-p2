@@ -135,9 +135,31 @@ namespace Hada {
             return tablero;
         }
 
-        public string ToString()
-        {
+        public override string ToString() {
+            string cadena = "";
 
+            // 1. Información de cada uno de los Barcos 
+            foreach (Barco b in barcos) {
+                cadena += b.ToString() + "\n";
+            }
+
+            // 2. Lista de 'Coordenadas Disparadas' 
+            cadena += "\nCoordenadas disparadas: ";
+            foreach (Coordenada c in coordenadasDisparadas) {
+                cadena += c.ToString() + " ";
+            }
+
+            // 3. Lista de 'Coordenadas Tocadas' 
+            cadena += "\nCoordenadas tocadas: ";
+            foreach (Coordenada c in coordenadasTocadas) {
+                cadena += c.ToString() + " ";
+            }
+
+            // 4. El tablero 
+            cadena += "\n\nCASILLAS TABLERO\n----------\n";
+            cadena += DibujarTablero();
+
+            return cadena;
         }
 
     }
