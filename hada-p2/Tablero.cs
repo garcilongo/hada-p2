@@ -93,37 +93,24 @@ namespace Hada
 
         public void Disparar(Coordenada c)
         {
-            Console.WriteLine("Introduce la coordenada a la que disparar FILA,COLUMNA (S para salir):");
-            string s = Console.ReadLine();
-
-            if (s != "S")
-            {
-                try
-                {
-                    char fila = s[0];
-                    char columna = s[2];
-
-                    Coordenada disparada = new Coordenada(int.Parse(fila.ToString()), int.Parse(columna.ToString()));
-
-                    if (disparada.Fila < 0 || disparada.Fila)
-                    {
-                        Console.WriteLine($"La coordenada ({s}) está fuera de las dimensiones del tablero.");
-                    }
-                    else
-                    {
-
-                    }
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine($"ERROR: Coordenada Invalida");
-                }
-            }
+           
         }
 
         public string DibujarTablero()
         {
+            String tablero = "";
 
+            for (int i = 0; i < this.TamTablero; i++)
+            {
+                for (int j = 0; j < this.TamTablero; j++)
+                {
+                    tablero = tablero + $"[{casillasTablero[new Coordenada(i, j)]}]";
+                }
+
+                tablero = tablero + "\n";
+            }
+
+            return tablero;
         }
 
         public string ToString()
