@@ -20,7 +20,7 @@ namespace Hada
 
         private void GameLoop() {
             // Crear lista de barcos (mínimo 3)
-            List<Barco> listaBarcos = new List<Barco>;
+            List<Barco> listaBarcos = new List<Barco>();
 
             // Ejemplo de creación
             listaBarcos.Add(new Barco("THOR", 1, 'h', new Coordenada(0, 0)));
