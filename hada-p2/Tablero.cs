@@ -103,11 +103,6 @@ namespace Hada {
             InicializaCasillasTablero();
         }
 
-<<<<<<< HEAD
-        public void Disparar(Coordenada c)
-        {
-           
-=======
         public void Disparar(Coordenada c) {
             // Comprobamos si está fuera de los límites del tablero actual
             if (c.Fila >= TamTablero || c.Columna >= TamTablero || c.Fila < 0 || c.Columna < 0) {
@@ -121,7 +116,6 @@ namespace Hada {
                     b.Disparo(c);
                 }
             }
->>>>>>> 959216c5ab9509dc40d754d60437514afed70725
         }
 
         public string DibujarTablero()
