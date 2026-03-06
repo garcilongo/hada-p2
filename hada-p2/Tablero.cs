@@ -93,11 +93,14 @@ namespace Hada {
             this.coordenadasDisparadas = new List<Coordenada>();
             this.coordenadasTocadas = new List<Coordenada>();
 
-
-            for (int i = 0; i < barcos.Count; i++)
-            {
-                this.barcos.Add(barcos[i]);
+            foreach (Barco b in barcos) {
+                this.barcos.Add(b);
+                b.eventoTocado += CuandoEventoTocado;
+                b.eventoHundido += CuandoEventoHundido;
             }
+
+            // Inicializar casillas
+            InicializaCasillasTablero();
         }
 
         public void Disparar(Coordenada c) {
