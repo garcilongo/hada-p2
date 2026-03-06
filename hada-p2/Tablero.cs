@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -61,13 +62,17 @@ namespace Hada
             }
         }
 
-        private void CuandoEventoTocado(Barco b, Coordenada c, Eventos.TocadoArgs t)
+        private void CuandoEventoTocado(TocadoArgs t)
         {
+            this.coordenadasTocadas.Add(t.CoordenadaImpacto);
 
+            Console.WriteLine($"TABLERO: Barco {t.Nombre} tocado en Coordenada: [{t.CoordenadaImpacto}] ");
         }
 
-        private void CuandoEventoHundido()
+        private void CuandoEventoHundido(HundidoArgs h)
         {
+            Console.WriteLine($"TABLERO: Barco {h.Nombre} hundido!! ");
+
 
         }
 
@@ -86,9 +91,34 @@ namespace Hada
             }
         }
 
-        public void Dispara(Coordenada c)
+        public void Disparar(Coordenada c)
         {
-            
+            Console.WriteLine("Introduce la coordenada a la que disparar FILA,COLUMNA (S para salir):");
+            string s = Console.ReadLine();
+
+            if (s != "S")
+            {
+                try
+                {
+                    char fila = s[0];
+                    char columna = s[2];
+
+                    Coordenada disparada = new Coordenada(int.Parse(fila.ToString()), int.Parse(columna.ToString()));
+
+                    if (disparada.Fila < 0 || disparada.Fila)
+                    {
+                        Console.WriteLine($"La coordenada ({s}) está fuera de las dimensiones del tablero.");
+                    }
+                    else
+                    {
+
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"ERROR: Coordenada Invalida");
+                }
+            }
         }
 
         public string DibujarTablero()

@@ -6,31 +6,55 @@ using System.Threading.Tasks;
 
 namespace Hada
 {
-    public class Eventos
+
+    //Eventos de la practica
+    public class TocadoArgs
     {
+        private string _nombre;
+        private Coordenada _coordenadaImpacto;
 
-        //Eventos de la practica
-        public class TocadoArgs
+        public string Nombre
         {
-            private string nombre;
-            private Coordenada coordenadaImpacto;
-            public TocadoArgs(string s, Coordenada c)
+            get
             {
+                return this._nombre;
+            }
+        }
+
+        public Coordenada CoordenadaImpacto
+        {
+            get
+            {
+                return this._coordenadaImpacto;
+            }
+        }
+
+        public TocadoArgs(string s, Coordenada c)
+        {
                 
-                this.nombre = s;
-                this.coordenadaImpacto = new Coordenada(c);
-            }
+            this._nombre = s;
+            this._coordenadaImpacto = new Coordenada(c);
         }
 
-        public class HundidoArgs
+            
+    }
+
+    public class HundidoArgs
+    {
+        private string _nombre;
+
+        public string Nombre
         {
-            private string nombre;
-
-            public HundidoArgs(string s)
+            get
             {
-                this.nombre = s;
+                return this._nombre;
             }
-
         }
+
+        public HundidoArgs(string s)
+        {
+            this._nombre = s;
+        }
+
     }
 }
