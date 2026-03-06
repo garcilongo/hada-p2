@@ -15,10 +15,10 @@ namespace Hada
             this.finPartida = false;
 
             // Inicializar bucle del juego
-            GameLoop();
+            gameLoop();
         }
 
-        private void GameLoop() {
+        private void gameLoop() {
             // Crear lista de barcos (mínimo 3)
             List<Barco> listaBarcos = new List<Barco>();
 
@@ -55,7 +55,7 @@ namespace Hada
                         int.TryParse(partes[1], out int c)) {
 
                         Coordenada cordDisparo = new Coordenada(f, c);
-                        tablero.Dispara(cordDisparo);
+                        tablero.Disparar(cordDisparo);
                     } else {
                         // Formato incorrecto -> Informar al usuario
                         Console.WriteLine("Formato incorrecto. Debe ser FILA,COLUMNA (ej: 1,2)");
