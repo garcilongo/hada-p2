@@ -86,7 +86,7 @@ namespace Hada {
 
         public Tablero(int tamtablero, List<Barco> barcos)
         {
-            this._tamTablero = tamtablero;
+            this.TamTablero = tamtablero;
             this.barcos = new List<Barco>();
             this.casillasTablero = new Dictionary<Coordenada, string>();
             this.barcosEliminados = new List<Barco>();
